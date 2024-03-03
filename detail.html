@@ -117,7 +117,7 @@
                             <input id="star1" name="rating" type="radio" value="1"/><label class="full" for="star1" title="1 star"></label>
                             <input id="starhalf" name="rating" type="radio" value="0.5"/><label class="half" for="starhalf" title="0.5 stars"></label>
                         </fieldset>
-                        <p>
+                        <p id="userComment">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi expedita iste, magnam nisi odio pariatur praesentium sed! Ex, ipsum, qui.
                         </p>
                     </div>
@@ -145,6 +145,12 @@
             localStorage.setItem("userRating", this.value);
         });
     });
+
+    const userComment = document.querySelector('p #userComment');
+    const savedComment = localStorage.getItem('userComment');
+    if (savedComment) {
+        userComment.textContent = savedComment;
+    }
 </script>
 </body>
 </html>

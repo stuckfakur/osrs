@@ -117,8 +117,8 @@
                         <input id="star1" name="rating" type="radio" value="1"/><label class="full" for="star1" title="1 star"></label>
                         <input id="starhalf" name="rating" type="radio" value="0.5"/><label class="half" for="starhalf" title="0.5 stars"></label>
                     </fieldset>
-                    <label for="comment">Comment</label>
-                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    <label for="inputComment">Comment</label>
+                    <textarea class="form-control" id="inputComment" name="comment" rows="3"></textarea>
                     <div class="d-flex">
                         <button class="btn btn-success" type="submit">Submit</button>
                     </div>
@@ -154,7 +154,7 @@
     });
 
     // save comment
-    const inputComment = document.getElementById('comment');
+    const inputComment = document.getElementById('inputComment');
     const savedComment = localStorage.getItem("userComment");
     if (savedComment) {
         inputComment.value = savedComment;
