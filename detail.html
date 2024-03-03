@@ -146,7 +146,7 @@
         });
     });
 
-    const userComment = document.querySelector('p #userComment');
+    const userComment = document.getElementById('userComment');
     const savedComment = localStorage.getItem('userComment');
     if (savedComment) {
         userComment.textContent = savedComment;
