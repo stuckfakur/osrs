@@ -130,6 +130,7 @@
 </main>
 
 <script>
+    // to open and close feedback popup
     const feedbackAlert = document.getElementById('feedbackBtn');
     feedbackAlert.addEventListener('click', () => {
         document.querySelector('.feedback-alert').classList.add('show');
@@ -138,6 +139,20 @@
     closeAlert.addEventListener('click', () => {
         document.querySelector('.feedback-alert').classList.remove('show');
     })
+
+    // save user rating on local storage
+    let
+    savedRating = localStorage.getItem("userRating");
+    if (savedRating) {
+        document.querySelector('input[name="rating"][value="' + savedRating + '"]').checked = true;
+    }
+
+    let ratingInputs = document.querySelectorAll('input[name="rating"]');
+    ratingInputs.forEach(function (input) {
+        input.addEventListener("change", function () {
+            localStorage.setItem("userRating", this.value);
+        });
+    });
 </script>
 </body>
 </html>

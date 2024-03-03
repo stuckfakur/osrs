@@ -127,6 +127,22 @@
 
         </div>
     </div>
+
 </main>
+
+
+<script>
+    let savedRating = localStorage.getItem("userRating");
+    if (savedRating) {
+        document.querySelector('input[name="rating"][value="' + savedRating + '"]').checked = true;
+    }
+
+    let ratingInputs = document.querySelectorAll('input[name="rating"]');
+    ratingInputs.forEach(function(input) {
+        input.addEventListener("change", function() {
+            localStorage.setItem("userRating", this.value);
+        });
+    });
+</script>
 </body>
 </html>
