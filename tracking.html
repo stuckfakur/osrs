@@ -141,8 +141,7 @@
     })
 
     // save user rating on local storage
-    let
-    savedRating = localStorage.getItem("userRating");
+    let savedRating = localStorage.getItem("userRating");
     if (savedRating) {
         document.querySelector('input[name="rating"][value="' + savedRating + '"]').checked = true;
     }
@@ -152,6 +151,16 @@
         input.addEventListener("change", function () {
             localStorage.setItem("userRating", this.value);
         });
+    });
+
+    // save comment
+    const inputComment = document.getElementById('comment');
+    const savedComment = localStorage.getItem("userComment");
+    if (savedComment) {
+        inputComment.value = savedComment;
+    }
+    inputComment.addEventListener('input', function (){
+        localStorage.setItem('userComment', this.value);
     });
 </script>
 </body>
